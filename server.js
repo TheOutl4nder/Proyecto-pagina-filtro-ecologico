@@ -47,6 +47,11 @@ app.route('/information.html')
         res.sendFile(path.join(__dirname+'/information.html'));
 });
 
+app.route('/userManagement.html')
+    .get(async function(req,res){
+        res.sendFile(path.join(__dirname+'/userManagement.html'));
+});
+
 app.route('/users')
 
     .get(async (req, res) => {
