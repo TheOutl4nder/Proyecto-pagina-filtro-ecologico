@@ -25,7 +25,7 @@ app.listen(port, () => console.log(`Conectado a http://localhost:${port}`))
 app.route('/')
     .get(async function(req,res){
         res.set({
-            'Content-Type':'application/javascript',
+            'Content-Type':'text/html',
             'X-Content-Type-Options':'nosniff'
         });
         res.sendFile(path.join(__dirname+'/ecoFilter.html'));
@@ -34,7 +34,7 @@ app.route('/')
 app.route('/ecoFilter.html')
     .get(async function(req,res){
         res.set({
-            'Content-Type':'application/javascript',
+            'Content-Type':'text/html',
             'X-Content-Type-Options':'nosniff'
         });
         res.sendFile(path.join(__dirname+'/ecoFilter.html'));
@@ -43,7 +43,7 @@ app.route('/ecoFilter.html')
 app.route('/Carrito.html')
     .get(async function(req,res){
         res.set({
-            'Content-Type':'application/javascript',
+            'Content-Type':'text/html',
             'X-Content-Type-Options':'nosniff'
         });
         res.sendFile(path.join(__dirname+'/Carrito.html'));
@@ -52,7 +52,7 @@ app.route('/Carrito.html')
 app.route('/ecoFilterUser.html')
     .get(async function(req,res){
         res.set({
-            'Content-Type':'application/javascript',
+            'Content-Type':'text/html',
             'X-Content-Type-Options':'nosniff'
         });
         res.sendFile(path.join(__dirname+'/ecoFilterUser.html'));
@@ -61,7 +61,7 @@ app.route('/ecoFilterUser.html')
 app.route('/information.html')
     .get(async function(req,res){
         res.set({
-            'Content-Type':'application/javascript',
+            'Content-Type':'text/html',
             'X-Content-Type-Options':'nosniff'
         });
         res.sendFile(path.join(__dirname+'/information.html'));
@@ -70,7 +70,7 @@ app.route('/information.html')
 app.route('/userManagement.html')
     .get(async function(req,res){
         res.set({
-            'Content-Type':'application/javascript',
+            'Content-Type':'text/html',
             'X-Content-Type-Options':'nosniff'
         });
         res.sendFile(path.join(__dirname+'/userManagement.html'));
