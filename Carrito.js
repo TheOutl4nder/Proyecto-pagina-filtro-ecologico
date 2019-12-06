@@ -1,7 +1,7 @@
 "use strict"
 var finalPrice=0;
 
-var urlProducts="http://localhost:3000/api/Productos/"
+var urlProducts="https://ecofilterdasw.herokuapp.com/api/Productos/"
 var itemRequest = new XMLHttpRequest();
 
 function loadCart(){
