@@ -1,6 +1,6 @@
 'use strict'
 //Juan Pablo Ramos Robles 
-
+const fs=require('fs')
 const express = require('express')
 const jwt = require('jsonwebtoken')
 const Product=require('./models/product');
@@ -16,6 +16,18 @@ const port = process.env.PORT || 3000;
 app.use(express.json())
 app.listen(port, () => console.log(`Conectado a http://localhost:${port}`))
 
+app.route('/')
+    .get(async (req,res)=>{
+        res.writeHead(200,{'Content-Type':'text/html'});
+        fs.readFile('ecoFilter.html',function(error,data){
+            if(error){
+                res.writeHead(400);
+            }else{
+                res.write(data);
+            }
+        })
+        res.end();
+    })
 
 app.route('/users')
 
