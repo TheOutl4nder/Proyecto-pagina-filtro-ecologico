@@ -1,8 +1,11 @@
 'use strict'
-//Juan Pablo Ramos Robles 
+//Juan Pablo Ramos Robles
+
+const http=require('http');
 const fs=require('fs')
 const express = require('express')
 const jwt = require('jsonwebtoken')
+const path=require('path');
 const Product=require('./models/product');
 const app = express()
 const {
@@ -13,21 +16,36 @@ const {
     showUsers
 } = require('./Usuarios')
 const port = process.env.PORT || 3000;
+const url="http://localhost:3000/";
+
 app.use(express.json())
+
 app.listen(port, () => console.log(`Conectado a http://localhost:${port}`))
 
 app.route('/')
-    .get(async (req,res)=>{
-        res.writeHead(200,{'Content-Type':'text/html'});
-        fs.readFile('ecoFilter.html',function(error,data){
-            if(error){
-                res.writeHead(400);
-            }else{
-                res.write(data);
-            }
-        })
-        res.end();
-    })
+    .get(async function(req,res){
+        res.sendFile(path.join(__dirname+'/ecoFilter.html'));
+});
+
+app.route('/ecoFilter.html')
+    .get(async function(req,res){
+        res.sendFile(path.join(__dirname+'/ecoFilter.html'));
+});
+
+app.route('/Carrito.html')
+    .get(async function(req,res){
+        res.sendFile(path.join(__dirname+'/Carrito.html'));
+});
+
+app.route('/ecoFilterUser.html')
+    .get(async function(req,res){
+        res.sendFile(path.join(__dirname+'/ecoFilterUser.html'));
+});
+
+app.route('/information.html')
+    .get(async function(req,res){
+        res.sendFile(path.join(__dirname+'/information.html'));
+});
 
 app.route('/users')
 
