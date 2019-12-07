@@ -48,7 +48,7 @@ registroBtn.addEventListener("click", function (event) {
 
     //EL OBJETO CON LA INFORACIÓN DE LOS USUARIOS LO CONVIERTO A JSON
     let StringInfo = JSON.stringify(datosRegistro)
-
+    var url="https://ecofilterdasw.herokuapp.com"
     var linkRegistro = url+"/users" //FALTA PONER EL LINK DE JSON-SERVER
 
     fetch(linkRegistro, { // mandar los datos del usuario al back-end
