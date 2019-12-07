@@ -16,7 +16,7 @@ function loadCart(){
         console.log(item);
         if(item!=null){
             itemRequest.open('GET',urlProducts,false);
-            console.log(urlProducts+item);
+            console.log(urlProducts);
             itemRequest.setRequestHeader('Content-Type','application/json');
             itemRequest.addEventListener("readystatechange",checkItem);
             let array=new Array;

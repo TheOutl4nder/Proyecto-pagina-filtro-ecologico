@@ -213,7 +213,7 @@ app.route('/api/Productos')
 async function getProduct(req,res,next){
     let product;
     try{
-        product=await Product.where({id: req.body.id});
+        product=await Product.findOne({id: req.body.id});
         if(product===null){
             return res.status(404).json({message:'Product Not Found!'});
         }
