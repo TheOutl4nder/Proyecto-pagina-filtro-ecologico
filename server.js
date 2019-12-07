@@ -204,7 +204,7 @@ app.route('/api/Productos')
     }
 })
 
-app.route('/api/Productos/:id')
+app.route('/api/Productos')
     .get(getProduct,(req,res)=>{
         console.log(res.product);
         return res.json(res.product)
