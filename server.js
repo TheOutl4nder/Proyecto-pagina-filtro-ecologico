@@ -31,6 +31,15 @@ app.route('/')
         res.sendFile(path.join(__dirname+'/ecoFilter.html'));
 });
 
+app.route('/ecoFilter.js')
+    .get(async function(req,res){
+        res.set({
+            'Content-Type':'application/javascript',
+            'X-Content-Type-Options':'nosniff'
+        });
+        res.sendFile(path.join(__dirname+'/ecoFilter.js'));
+});
+
 app.route('/ecoFilter.html')
     .get(async function(req,res){
         res.set({
@@ -49,6 +58,15 @@ app.route('/Carrito.html')
         res.sendFile(path.join(__dirname+'/Carrito.html'));
 });
 
+app.route('/Carrito.js')
+    .get(async function(req,res){
+        res.set({
+            'Content-Type':'application/javascript',
+            'X-Content-Type-Options':'nosniff'
+        });
+        res.sendFile(path.join(__dirname+'/Carrito.js'));
+});
+
 app.route('/ecoFilterUser.html')
     .get(async function(req,res){
         res.set({
@@ -56,6 +74,15 @@ app.route('/ecoFilterUser.html')
             'X-Content-Type-Options':'nosniff'
         });
         res.sendFile(path.join(__dirname+'/ecoFilterUser.html'));
+});
+
+app.route('/ecoFilterUser.js')
+    .get(async function(req,res){
+        res.set({
+            'Content-Type':'application/javascript',
+            'X-Content-Type-Options':'nosniff'
+        });
+        res.sendFile(path.join(__dirname+'/ecoFilterUser.js'));
 });
 
 app.route('/information.html')
@@ -74,6 +101,16 @@ app.route('/userManagement.html')
             'X-Content-Type-Options':'nosniff'
         });
         res.sendFile(path.join(__dirname+'/userManagement.html'));
+
+});
+
+app.route('/UserManagement.js')
+    .get(async function(req,res){
+        res.set({
+            'Content-Type':'application/javascript',
+            'X-Content-Type-Options':'nosniff'
+        });
+        res.sendFile(path.join(__dirname+'/UserManagement.js'));
 });
 
 app.route('/users')
