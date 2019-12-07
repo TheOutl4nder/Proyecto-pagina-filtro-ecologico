@@ -1,5 +1,7 @@
 'use strict'
 //Juan Pablo Ramos Robles
+//Isaac Eduardo Gauna Blancarte
+//Este server.js sirve tanto como router como servidor, tiene todas las rutas y todos los métodos del servidor.
 
 const http=require('http');
 const fs=require('fs')

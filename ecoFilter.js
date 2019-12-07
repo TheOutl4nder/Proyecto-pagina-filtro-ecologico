@@ -45,10 +45,12 @@ registroBtn.addEventListener("click", function (event) {
         genero: genero
     }
 
+    var url="https://ecofilterdasw.herokuapp.com/"
+
     //EL OBJETO CON LA INFORACIÓN DE LOS USUARIOS LO CONVIERTO A JSON
     let StringInfo = JSON.stringify(datosRegistro)
 
-    var linkRegistro = "http://localhost:3000/users" //FALTA PONER EL LINK DE JSON-SERVER
+    var linkRegistro = url+"/users" //FALTA PONER EL LINK DE JSON-SERVER
 
     fetch(linkRegistro, { // mandar los datos del usuario al back-end
             method: 'POST',
@@ -94,7 +96,7 @@ log.addEventListener("click", function (event) {
     
 
 
-    let urlLogin = "http://localhost:3000/users"//URL QUE USAMOS PARA LOS USUARIOS
+    let urlLogin = url+"/users"//URL QUE USAMOS PARA LOS USUARIOS
 
     fetch(urlLogin, {
             method: 'GET',
