@@ -1,7 +1,7 @@
 "use strict"
 var finalPrice=0;
 
-var urlProducts="https://ecofilterdasw.herokuapp.com/api/Productos/"
+var urlProducts="https://ecofilterdasw.herokuapp.com/api/Productos"
 var itemRequest = new XMLHttpRequest();
 
 function loadCart(){
@@ -15,7 +15,7 @@ function loadCart(){
         let item=localStorage.getItem("cartItem"+i);
         console.log(item);
         if(item!=null){
-            itemRequest.open('GET',urlProducts+item,false);
+            itemRequest.open('GET',urlProducts,false);
             console.log(urlProducts+item);
             itemRequest.setRequestHeader('Content-Type','application/json');
             itemRequest.addEventListener("readystatechange",checkItem);
