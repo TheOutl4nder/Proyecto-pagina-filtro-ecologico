@@ -9,6 +9,7 @@
 //QUE EL BOTÓN ESTÉ APAGADO A MENOS QUE TODOS LOS CAMPOS ESTÉN LLENOS
 document.getElementById("registroBtn").disabled = true
 let evento = document.querySelector('form')
+const url="https://ecofilterdasw.herokuapp.com/"
 
 //EVENTO DE CHANGE PARA CUANDO CAMBIAN LOS INPUTS
 evento.addEventListener("change", () => {
@@ -44,8 +45,6 @@ registroBtn.addEventListener("click", function (event) {
         contraseña: contra2,
         genero: genero
     }
-
-    var url="https://ecofilterdasw.herokuapp.com/"
 
     //EL OBJETO CON LA INFORACIÓN DE LOS USUARIOS LO CONVIERTO A JSON
     let StringInfo = JSON.stringify(datosRegistro)
