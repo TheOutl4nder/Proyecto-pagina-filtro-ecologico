@@ -96,13 +96,13 @@ app.route('/information.html')
         res.sendFile(path.join(__dirname+'/information.html'));
 });
 
-app.route('/userManagement.html')
+app.route('/UserManagement.html')
     .get(async function(req,res){
         res.set({
             'Content-Type':'text/html',
             'X-Content-Type-Options':'nosniff'
         });
-        res.sendFile(path.join(__dirname+'/userManagement.html'));
+        res.sendFile(path.join(__dirname+'/UserManagement.html'));
 
 });
 
@@ -213,7 +213,7 @@ app.route('/api/Productos')
 async function getProduct(req,res,next){
     let product;
     try{
-        product=await Product.find({id:req.body.id});
+        product=await Product.where({id: req.body.id});
         if(product===null){
             return res.status(404).json({message:'Product Not Found!'});
         }
