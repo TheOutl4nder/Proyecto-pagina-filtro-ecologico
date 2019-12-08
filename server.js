@@ -183,9 +183,10 @@ function verifyToken(req,res,next){
 app.route('/api/Productos')
     .get(async(req,res)=>{
     try{
-        console.log(req.body.id)
-        const Prod=await Product.find({"id":req.body.id});
-        return res.send(Prod);
+        console.log(req.body.id);
+        let Prod=await Product.find({"id":req.body.id});
+        let actual=Prod[0];
+        return res.send(actual);
     }catch (err){
         return res.status(500).json({message: err.message});
     }
