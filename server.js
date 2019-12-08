@@ -183,7 +183,7 @@ function verifyToken(req,res,next){
 app.route('/api/Productos')
     .get(async(req,res)=>{
     try{
-        const Prod=await Product.find({});
+        const Prod=await Product.find({"id":req.body.id});
         return res.send(Prod);
     }catch (err){
         return res.status(500).json({message: err.message});
@@ -204,22 +204,3 @@ app.route('/api/Productos')
     }
 })
 
-app.route('/api/Productos')
-    .get(getProduct,(req,res)=>{
-        console.log(res.product);
-        return res.json(res.product)
-    })
-
-async function getProduct(req,res,next){
-    let product;
-    try{
-        product=await Product.findOne({id: req.body.id});
-        if(product===null){
-            return res.status(404).json({message:'Product Not Found!'});
-        }
-    }catch(err){
-        return res.status(500).json({message:err.message});
-    }
-    res.product=product;
-    next();
-}
