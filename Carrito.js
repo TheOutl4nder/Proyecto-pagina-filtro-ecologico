@@ -21,7 +21,7 @@ function loadCart(){
             itemRequest.addEventListener("readystatechange",checkItem);
             let array=new Array;
             array.push(item);
-            let payload=JSON.stringify(array[0]);
+            let payload=JSON.stringify({id:array[0]});
             console.log(payload);
             itemRequest.send(payload);
         }
