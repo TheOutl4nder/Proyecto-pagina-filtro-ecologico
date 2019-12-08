@@ -44,7 +44,7 @@ function loadCart(){
 function checkItem(){
     if(itemRequest.readyState===XMLHttpRequest.DONE){
         if(itemRequest.status===200||itemRequest.status===304){ //PUEDE SER 200 O 304 QUE ES LA MISMA RESPUESTA
-            let respose=JSON.parse(itemRequest.responseText);
+            let respose=itemRequest.responseText;
             insertItem(respose);
         }
         else{
