@@ -181,16 +181,7 @@ function verifyToken(req,res,next){
 }
 
 app.route('/api/Productos')
-    .get(async(req,res)=>{
-    try{
-        console.log(req.body.id);
-        let Prod=await Product.find({"id":req.body.id});
-        let actual=Prod[0];
-        return res.send(actual);
-    }catch (err){
-        return res.status(500).json({message: err.message});
-    }
-}).post(async (req,res)=>{
+    .post(async (req,res)=>{
     const product= new Product({
         id:req.body.id,
         nombre:req.body.nombre,
@@ -205,4 +196,16 @@ app.route('/api/Productos')
         return res.status(500).json({message: err.message});
     }
 })
+
+app.route('/api/Productos/:id')
+    .get(async(req,res)=>{
+        try{
+            console.log(req.params.id);
+            let Prod=await Product.findOne({"id":req.params.id});
+            console.log(Prod);
+            return res.status(200).send(Prod);
+        }catch (err){
+            return res.status(500).json({message: err.message});
+        }
+    })
 
